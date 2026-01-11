@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constant/my_constant.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -11,8 +12,8 @@ class ProfileScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: [
-            SizedBox(height: 20),
-            Stack(
+            const SizedBox(height: 20),
+            const Stack(
               children: [
                 CircleAvatar(
                   radius: 50,
@@ -34,25 +35,40 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               "Natthaporn  Wangsuk", 
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: headingTextStyle,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 218, 179, 249),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                backgroundColor: lightBackgroundColor,
+                ),
+              onPressed:() {},
+              child: Text("naththaphrnh@gmail.com", style: bodyTextStyle,),
+               ),
+              
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 25.0), //ซ้าย บน ขวา ล่าง หรือ all(8.0)
+                child: Container(
+                  width: double.infinity,
+                  height: 40,
+                  color: darkBackgroundColor,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const SizedBox(width: 10,),
+                      Icon(Icons.edit, color: primaryColor, size: 24.0,),
+                      const SizedBox(width: 20,),
+                      Text("Edit Profile", style: bodyTextStyle,),
+                      const Spacer(),
+                      Icon(Icons.arrow_forward_ios, color: primaryColor, size: 24.0,),
+                    ],
+                  ),
                 ),
               ),
-              onPressed:() {},
-               child: Text("naththaphrnh@gnail.com"),
-               ),
           ],
         ),
       ),
@@ -60,4 +76,6 @@ class ProfileScreen extends StatelessWidget {
 
     
   }
+
+  
 }
